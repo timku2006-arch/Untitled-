@@ -5,15 +5,23 @@ import type { Drop } from "@/data/drops";
 import { formatDayTime } from "@/lib/date";
 import { useMembership } from "@/lib/membership";
 
+type Props = {
+  drop: Drop;
+  /** soon — ещё закрыт, members — открыт для клуба. */
+  phase?: "soon" | "members" | "public";
+};
+
 /** Статус доступа к дропу для текущего пользователя. */
-export function AccessStatus({ drop }: { drop: Drop }) {
+export function AccessStatus({ drop, phase = "soon" }: Props) {
   const { isMember } = useMembership();
 
   if (isMember) {
     return (
       <p className="text-small">
         <span className="mr-2 inline-block size-1.5 translate-y-[-2px] rounded-full bg-accent" aria-hidden="true" />
-        Вы в клубе: доступ откроется {formatDayTime(drop.membersAt)}.
+        {phase === "soon"
+          ? `Вы в клубе: доступ откроется ${formatDayTime(drop.membersAt)}.`
+          : "Вы в клубе: дроп уже открыт для вас."}
       </p>
     );
   }

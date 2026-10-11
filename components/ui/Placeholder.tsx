@@ -89,7 +89,7 @@ function Texture() {
     <svg className="absolute inset-0 h-full w-full" aria-hidden="true">
       <defs>
         <pattern id="twill" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(-30)">
-          <line x1="0" y1="0" x2="0" y2="6" stroke="var(--color-ink-muted)" strokeOpacity="0.14" strokeWidth="2" />
+          <line x1="0" y1="0" x2="0" y2="6" stroke="var(--color-ink-muted)" strokeOpacity="0.22" strokeWidth="2" />
         </pattern>
       </defs>
       <rect width="100%" height="100%" fill="url(#twill)" />

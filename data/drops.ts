@@ -69,7 +69,7 @@ export const DROPS: Drop[] = [
     publicAt: null,
     edition: 200,
     itemsCount: 5,
-    preview: ["shirt", "trousers"],
+    preview: ["trousers", "shirt"],
   },
 ];
 
